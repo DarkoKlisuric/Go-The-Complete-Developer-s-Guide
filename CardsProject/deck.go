@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
+
 
 // Create a new type of 'deck'
 // which is a slice of stings
@@ -26,9 +30,17 @@ func newDeck() deck {
 
 	return cards
 }
-
+// resivers
 func (d deck) print() {
 	for i, card := range d {
 		fmt.Println(i, card)
 	}
+}
+// return two types of deck
+func deal(d deck, handSize int) (deck, deck) {
+	return d[:handSize], d[handSize:]
+}
+//joining a slice to string
+func (d deck) toString() string {
+	return strings.Join([]string(d) , ",")
 }
