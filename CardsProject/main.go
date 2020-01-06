@@ -17,5 +17,6 @@ func main()  {
 	cards.saveToFile("FirstDeck")
 	*/
 	cards := newDeckFromFile("FirstDeck")
+	cards.shuffle()
 	cards.print()
 }
