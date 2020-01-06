@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
+	"io/ioutil"
 	"strings"
 )
-
 
 // Create a new type of 'deck'
 // which is a slice of stings
@@ -43,4 +43,10 @@ func deal(d deck, handSize int) (deck, deck) {
 //joining a slice to string
 func (d deck) toString() string {
 	return strings.Join([]string(d) , ",")
+}
+//Writing file on hard disk
+func (d deck) saveToFile(filename string) error {
+	//converting string to byte slice
+	byteSlice := []byte(d.toString())
+	return ioutil.WriteFile(filename, byteSlice, 0666)
 }
