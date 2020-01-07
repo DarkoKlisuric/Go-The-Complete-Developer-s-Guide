@@ -29,6 +29,7 @@ func main()  {
 	*/
 
 	// embedded struct
+
 	marko := person{
 		firstName: "Marko",
 		lastName:  "Markić",
@@ -37,8 +38,14 @@ func main()  {
 			yearOfBirth: 1995,
 		},
 	}
+	// get memory address of marko
+	// 1. solution
 	markoPointer := &marko
 	markoPointer.updateName("Markan")
+	marko.print()
+
+	// 2. solution
+	marko.updateName("Markan2")
 	marko.print()
 }
 func (pointerToPerson *person) updateName(newFirstName string) {
