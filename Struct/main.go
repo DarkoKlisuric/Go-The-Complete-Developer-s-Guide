@@ -37,9 +37,13 @@ func main()  {
 			yearOfBirth: 1995,
 		},
 	}
+	markoPointer := &marko
+	markoPointer.updateName("Markan")
 	marko.print()
 }
-
-func (p person) print()  {
+func (pointerToPerson *person) updateName(newFirstName string) {
+	(*pointerToPerson).firstName = newFirstName
+}
+func (p person) print() {
 	fmt.Printf("%+v", p)
 }
