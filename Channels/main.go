@@ -10,15 +10,15 @@ func main() {
 		"http://app.e-udruge.eu/",
 		"http://dora.ci-sdz.hr/",
 	}
-
 	c := make(chan string)
 
 	for _, link := range links {
 		go checkLink(link, c)
 	}
-
 	//receive value from channel
-	fmt.Println(<-c)
+	for i := 0; i < len(links); i++ {
+		fmt.Println(<-c)
+	}
 }
 
 func checkLink(link string, c chan string) {
@@ -32,5 +32,5 @@ func checkLink(link string, c chan string) {
 	}
 
 	fmt.Println(link, "is up!")
-	c <- "Yep its up"
+	c <- "Its up"
 }
