@@ -1,1 +1,1 @@
-# MyFirstGo
+# Learning GoLang
