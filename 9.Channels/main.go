@@ -8,8 +8,8 @@ import (
 
 func main() {
 	links := []string{
-		"9.http://app.e-udruge.eu/",
-		"9.http://dora.ci-sdz.hr/",
+		"8.http://app.e-udruge.eu/",
+		"8.http://dora.ci-sdz.hr/",
 	}
 	c := make(chan string)
 
